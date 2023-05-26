@@ -15,10 +15,12 @@ public class FallObjectManager : MonoBehaviour
     float _intervalTime = 5;
     [SerializeField, Range(1, 100), Header("èâä˙ê∂ê¨")]
     int _count = 1;
+    [SerializeField, Space(20)]
+    GamejamScore _gamejamScore = null;
 
 
     [Tooltip("")]
-    bool _generateEnabled = false;
+    bool _generateEnabled = true;
     [Tooltip("")]
     List<IFallObject>[] _fallObjectList = null;
 
@@ -27,13 +29,13 @@ public class FallObjectManager : MonoBehaviour
     void Start()
     {
         _fallObjectList = new List<IFallObject>[_fruit.Length + _item.Length];
-        if (_fruit.Length > 1)
+        if (_fruit.Length > 0)
         {
-            Array.ForEach(_fruit, x => FirstInstance(x, _count));
+            FirstInstance(_fruit, _count);
         }
-        if (_item.Length > 1)
+        if (_item.Length > 0)
         {
-            Array.ForEach(_item, x => FirstInstance(x, _count));
+            FirstInstance(_item, _count);
         }
 
         for (int i = 0; i < _fallObjectList.Length; i++)
@@ -42,22 +44,15 @@ public class FallObjectManager : MonoBehaviour
         }
     }
 
-    public void FirstInstance(IFallObject enemy, int count)
+    public void FirstInstance(FallObject[] enemy, int count)
     {
-        for (int i = 0; i < _fallObjectList.Length; i++)
+        for (int i = 0;i < enemy.Length; i++)
         {
             _fallObjectList[i] = new();
             for (int j = 0; j < count; j++)
             {
-                IFallObject prefab = null;
-                if (enemy is Fruit fruit)
-                {
-                    prefab = Instantiate<Fruit>(fruit);
-                }
-                if (enemy is Item item)
-                {
-                    prefab = Instantiate<Item>(item);
-                }
+                FallObject prefab = Instantiate<FallObject>(enemy[i]);
+                prefab.Instanse(_gamejamScore);
                 _fallObjectList[i].Add(prefab);
             }
         }
@@ -67,6 +62,7 @@ public class FallObjectManager : MonoBehaviour
     {
         while (true)//ToDoÉQÅ[ÉÄèIóπéûÇ…é~Ç‹ÇÈÇÊÇ§Ç…Ç∑ÇÈ
         {
+            Debug.Log("Looping");
             int probability = UnityEngine.Random.Range(0, 100);
             foreach (var e in fallObjects)
             {
@@ -81,6 +77,7 @@ public class FallObjectManager : MonoBehaviour
                     break;
                 }
             }
+            yield return null;
         }
     }
 }

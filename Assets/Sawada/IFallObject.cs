@@ -12,6 +12,7 @@ public interface IFallObject
     /// 出現確率
     /// </summary>
     public int GenerateProbability { get; }
+    public void Instanse(GamejamScore gamejamScore);
     /// <summary>
     /// オブジェクト生成時の処理
     /// </summary>
@@ -21,7 +22,7 @@ public interface IFallObject
     /// hit時の処理
     /// </summary>
     /// <returns></returns>
-    public int HitResult();
+    public void HitResult();
     /// <summary>
     /// オブジェクトの削除
     /// </summary>
