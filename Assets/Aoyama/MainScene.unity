@@ -1767,6 +1767,10 @@ PrefabInstance:
       value: Generator
       objectReference: {fileID: 0}
     - target: {fileID: 7382143703420163821, guid: ff10eb1fe3ed54242ad44e9bce507a9c, type: 3}
+      propertyPath: _count
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382143703420163821, guid: ff10eb1fe3ed54242ad44e9bce507a9c, type: 3}
       propertyPath: _gamejamScore
       value: 
       objectReference: {fileID: 985433457}
