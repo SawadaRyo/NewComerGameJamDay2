@@ -69,7 +69,7 @@ public class FallObjectManager : MonoBehaviour
 
     public IEnumerator GenerateEnemy(List<IFallObject> fallObjects)
     {
-        while (true)//ToDoƒQ[ƒ€I—¹‚É~‚Ü‚é‚æ‚¤‚É‚·‚é
+        while (_isGame)//ToDoƒQ[ƒ€I—¹‚É~‚Ü‚é‚æ‚¤‚É‚·‚é
         {
             Debug.Log("Looping");
             int probability = UnityEngine.Random.Range(0, 100);
