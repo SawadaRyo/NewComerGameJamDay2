@@ -22,12 +22,15 @@ public class FallObjectManager : MonoBehaviour
     [Tooltip("")]
     bool _generateEnabled = true;
     [Tooltip("")]
+    bool _isGame = false;
+    [Tooltip("")]
     List<IFallObject>[] _fallObjectList = null;
 
     float IntervalTime => UnityEngine.Random.Range(0.1f, _intervalTime);
 
     void Start()
     {
+        _isGame = true;
         _generateEnabled = true;
         _fallObjectList = new List<IFallObject>[_fruit.Length + _item.Length];
         if (_fruit.Length > 0)
@@ -61,7 +64,7 @@ public class FallObjectManager : MonoBehaviour
 
     public void FinishGame()
     {
-        _generateEnabled = false;
+        _isGame = false;
     }
 
     public IEnumerator GenerateEnemy(List<IFallObject> fallObjects)

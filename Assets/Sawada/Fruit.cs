@@ -20,6 +20,7 @@ public class Fruit : FallObject
         if (_hitCount == _countChange)
         {
             _gamejamScore.Addscore(_scoreValue);
+            Erase();
         }
         else if (_hitCount < _countChange)
         {
