@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UniRx;
 using UnityEngine;
 
 public class FallObjectManager : MonoBehaviour
@@ -15,7 +14,7 @@ public class FallObjectManager : MonoBehaviour
     [SerializeField, Range(3, 10), Header("ê∂ê¨ä‘äu")]
     float _intervalTime = 5;
     [SerializeField, Range(1, 100), Header("èâä˙ê∂ê¨")]
-    int _count = 0;
+    int _count = 1;
 
 
     [Tooltip("")]
@@ -45,7 +44,7 @@ public class FallObjectManager : MonoBehaviour
 
     public void FirstInstance(IFallObject enemy, int count)
     {
-        for (int i = 0; i < _count; i++)
+        for (int i = 0; i < _fallObjectList.Length; i++)
         {
             _fallObjectList[i] = new();
             for (int j = 0; j < count; j++)
