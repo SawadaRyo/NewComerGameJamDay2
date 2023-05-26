@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class TestImage : MonoBehaviour
 {
+    [SerializeField]
+    UnityEvent _timeUpEvent;
+
     [SerializeField]
     Text _timerText = default;
 
@@ -36,8 +40,8 @@ public class TestImage : MonoBehaviour
             _timer = 0;
 
             resultPanel.SetActive(true);
-
             ControlTime();
+            _timeUpEvent.Invoke();
         }
     }
 
