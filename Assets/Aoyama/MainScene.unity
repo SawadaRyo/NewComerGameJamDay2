@@ -1033,7 +1033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 537643527174777257, guid: 1dfdccefae6f77a44b8af6a06dfa7fc2, type: 3}
       propertyPath: _interval
-      value: 60
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 537643527174777257, guid: 1dfdccefae6f77a44b8af6a06dfa7fc2, type: 3}
       propertyPath: resultPanel
