@@ -663,6 +663,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e32cdbabeb8c847a8cfd35db88ac4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &586878395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5050085572463203441, guid: f0e8cceafb12b2f4dacc44b18e1ff4da, type: 3}
+  m_PrefabInstance: {fileID: 8043743277882140485}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &674973540 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3346226822726033056, guid: c3dba5b3f6ea6a546815730d9d361ae0, type: 3}
@@ -865,6 +876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: 0
   ScoreText: {fileID: 985433455}
+  _resultScoreText: {fileID: 586878395}
 --- !u!114 &985433458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,6 +1565,10 @@ PrefabInstance:
       propertyPath: magazine
       value: 
       objectReference: {fileID: 474744870}
+    - target: {fileID: 8168691222059830399, guid: c8c0c431c18415244a1e098207e4ed81, type: 3}
+      propertyPath: bullet_Special
+      value: 
+      objectReference: {fileID: 5591580587872523813, guid: 51dff1465814c03439645dbb9762bfe1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8c0c431c18415244a1e098207e4ed81, type: 3}
 --- !u!114 &1203883348 stripped

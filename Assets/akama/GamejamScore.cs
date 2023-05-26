@@ -8,6 +8,10 @@ public class GamejamScore : MonoBehaviour
 {
     public int _score;
     public Text ScoreText;
+
+    [SerializeField]
+    Text _resultScoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +26,7 @@ public class GamejamScore : MonoBehaviour
     public void Addscore(int score)
     {
         _score += score;
+        ScoreText.text = string.Format("{0}", _score);
+        _resultScoreText.text = string.Format("{0}", _score);
     }
 }
