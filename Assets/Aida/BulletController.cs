@@ -1,8 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class BulletController : MonoBehaviour
 {
     [Tooltip("弾の速度")]
+    public float BulletSpeed { get => bullet_Speed; set => bullet_Speed = value; }
     [SerializeField] private float bullet_Speed = 1f;
     [Tooltip("アイテムのプレハブ")]
     [SerializeField] private GameObject get_Item;
@@ -18,16 +20,16 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.gameObject.tag == "DeadLine")
-       {  
-          Destroy(this.gameObject);
-       }
-       if (collision.gameObject.TryGetComponent<IFallObject>(out IFallObject fallobject))
-       {
-           fallobject.HitResult();
-           Destroy(this.gameObject);
-           GameObject ob = Instantiate(get_Item, transform.position, Quaternion.identity);
-           Destroy(ob, life_Time);
-       }
+        if (collision.gameObject.tag == "DeadLine")
+        {
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.TryGetComponent<IFallObject>(out IFallObject fallobject))
+        {
+            fallobject.HitResult();
+            Destroy(this.gameObject);
+            GameObject ob = Instantiate(get_Item, transform.position, Quaternion.identity);
+            Destroy(ob, life_Time);
+        }
     }
 }

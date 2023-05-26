@@ -23,7 +23,7 @@ public class JudgmentBar : MonoBehaviour
     AudioSource _redSound;
     [SerializeField]
     AudioSource _blueSound;
-
+    [SerializeField] Magazine _magazine;
 
     private void Update()
     {
@@ -95,6 +95,7 @@ public class JudgmentBar : MonoBehaviour
                         _redSound?.Play();
                         break;
                     case ColorType.Blue:
+                        _magazine.IsStrong();
                         _blueSound?.Play();
                         break;
                 }

@@ -398,30 +398,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1041931674864442461, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931675028230715, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931675476668672, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931675812094243, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931675956422345, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: _reroadBulletNum
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931675956422350, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 99
-      objectReference: {fileID: 0}
     - target: {fileID: 1041931676054670069, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
       propertyPath: m_Name
       value: Magazine
@@ -469,26 +445,6 @@ PrefabInstance:
     - target: {fileID: 1041931676054670071, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931676288409601, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931676560378359, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931676626280497, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.521
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931676836331993, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041931676836331995, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4195c11ba027dae4f9aeb54d5a74315f, type: 3}
@@ -562,5 +518,13 @@ PrefabInstance:
       propertyPath: magazine
       value: 
       objectReference: {fileID: 2054667437}
+    - target: {fileID: 8168691222059830399, guid: c8c0c431c18415244a1e098207e4ed81, type: 3}
+      propertyPath: bullet_Special
+      value: 
+      objectReference: {fileID: 5591580587872523813, guid: 51dff1465814c03439645dbb9762bfe1, type: 3}
+    - target: {fileID: 8168691222059830399, guid: c8c0c431c18415244a1e098207e4ed81, type: 3}
+      propertyPath: bullet_Probability
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8c0c431c18415244a1e098207e4ed81, type: 3}
