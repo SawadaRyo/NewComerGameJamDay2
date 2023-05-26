@@ -14,7 +14,8 @@ public class Magazine : MonoBehaviour
     [SerializeField] Text _maxBulletText;
     [SerializeField] JudgmentBar _judgmentBar;
     [SerializeField] GameObject _reroad;
-    bool _reroading = false;
+    [HideInInspector]
+    public bool _reroading = false;
     public bool Strong { get => _strong; set => _strong = value; }
     private bool _strong;
     private void Start()
@@ -34,10 +35,9 @@ public class Magazine : MonoBehaviour
             _strong = false;
         }
         //二回目のR ゲームバーからリロードする弾の数を教える
-        else if (Input.GetKeyDown(KeyCode.R) && _reroading == true)
+        else if (Input.GetKeyDown(KeyCode.W) && _reroading == true)
         {
             Debug.Log("R2");
-            _reroading = false;
             _remainingBullets += _judgmentBar.HowMany();
             if (_remainingBullets > _magazineMax)
             {
@@ -46,6 +46,7 @@ public class Magazine : MonoBehaviour
             _bulletText.text = $"{_remainingBullets}";
             _judgmentBar.gameObject.SetActive(false);
             _reroad.SetActive(false);
+            _reroading = false;
         }
     }
     public void IsStrong() 

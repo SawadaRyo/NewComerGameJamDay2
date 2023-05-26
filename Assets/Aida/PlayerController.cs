@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (stop) return;
-        if (Input.GetKeyDown(KeyCode.Space) && magazine.RemainingBullets > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && magazine.RemainingBullets > 0 && magazine._reroading == false)
         {
             var s = Random.Range(0, 100);
             if (magazine.Strong)
