@@ -5,15 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [Tooltip("プレイヤーの速度")]
+    [Tooltip("プレイヤーの移動速度")]
     [SerializeField] private float speed = 1f;
     [Tooltip("弾のプレハブ")]
     [SerializeField] private GameObject bullet_Prefab;
-    [Tooltip("弾の弾数")]
-    [SerializeField] private int bullet_Count = 6;
     [Tooltip("弾の発射位置")]
-    [SerializeField] private Transform muzzle;
-    
+    [SerializeField] private Transform bullet_Muzzle;
+    [Tooltip("弾数の最大値")]
+    [SerializeField] private int bullet_Max = 6;
+    private int bullet_Count = 0; //弾数
+
     Rigidbody2D _rb;
 
     /// <summary>
@@ -22,12 +23,13 @@ public class PlayerController : MonoBehaviour
     public int BulletCount 
     {
         get { return bullet_Count; }
-        set { bullet_Count = value; }
+        private set { bullet_Count = value; }
     }
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        BulletCount = bullet_Max;
     }
 
     /// <summary>
@@ -37,9 +39,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && BulletCount > 0)
         {
-          Instantiate(bullet_Prefab, muzzle.position, Quaternion.identity);
-          bullet_Count--;
-          Debug.Log("残り弾数は" + BulletCount + "個");
+           Instantiate(bullet_Prefab, bullet_Muzzle.transform.position, Quaternion.identity);
+           BulletCount--;
+           Debug.Log("残り弾数は" + BulletCount + "個");
+        }
+        if(BulletCount > bullet_Max)
+        {
+            BulletCount = bullet_Max;
         }
     }
 
