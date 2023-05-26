@@ -16,6 +16,15 @@ public class JudgmentBar : MonoBehaviour
     float _speed;
     [SerializeField]float _timeCount;
     [SerializeField, Tooltip("触れてるゲームオブジェクト")] List<GameObject> _collisionGameObject;
+
+    [SerializeField]
+    AudioSource _whiteSound;
+    [SerializeField]
+    AudioSource _redSound;
+    [SerializeField]
+    AudioSource _blueSound;
+
+
     private void Update()
     {
         //場所が戻るようにする
@@ -69,13 +78,28 @@ public class JudgmentBar : MonoBehaviour
         var num = 0;
         foreach (var i in _collisionGameObject)
         {
-            if (i.gameObject.TryGetComponent<Judgment>(out _))
+            if (i.gameObject.TryGetComponent<Judgment>(out Judgment judgment))
             {
-                int temp = i.GetComponent<Judgment>().ReroadBulletNum;
+                int temp = judgment.ReroadBulletNum;
                 if (temp > num)
                 {
                     num = temp;
                 }
+
+                switch (judgment.ColorType)
+                {
+                    case ColorType.White:
+                        _whiteSound?.Play();
+                        break;
+                    case ColorType.Red:
+                        _redSound?.Play();
+                        break;
+                    case ColorType.Blue:
+                        _blueSound?.Play();
+                        break;
+                }
+
+                
             }
         }
         StopMove();
