@@ -28,6 +28,7 @@ public class FallObjectManager : MonoBehaviour
 
     void Start()
     {
+        _generateEnabled = true;
         _fallObjectList = new List<IFallObject>[_fruit.Length + _item.Length];
         if (_fruit.Length > 0)
         {
@@ -56,6 +57,11 @@ public class FallObjectManager : MonoBehaviour
                 _fallObjectList[i].Add(prefab);
             }
         }
+    }
+
+    public void FinishGame()
+    {
+        _generateEnabled = false;
     }
 
     public IEnumerator GenerateEnemy(List<IFallObject> fallObjects)

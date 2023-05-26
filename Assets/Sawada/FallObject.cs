@@ -33,7 +33,7 @@ public abstract class FallObject : MonoBehaviour,IFallObject
         _collider.enabled = true;
         StartCoroutine(OnUpdate());
     }
-    public void Erase()
+    public virtual void Erase()
     {
         Debug.Log("Death");
         _rb.isKinematic = true;
@@ -48,7 +48,7 @@ public abstract class FallObject : MonoBehaviour,IFallObject
         while (_isActive)
         {
             time += Time.deltaTime;
-            if (time >= _remainTime || Input.GetKeyDown(KeyCode.A))
+            if (time >= _remainTime)
             {
                 Erase();
             }
