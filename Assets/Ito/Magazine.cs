@@ -11,17 +11,19 @@ public class Magazine : MonoBehaviour
     [SerializeField, Tooltip("残弾の数")] private int _remainingBullets = 6;
     [SerializeField] int _magazineMax = 6;
     [SerializeField] Text _bulletText;
+    [SerializeField] Text _maxBulletText;
     [SerializeField] JudgmentBar _judgmentBar;
     [SerializeField] GameObject _reroad;
     bool _reroading = false;
     private void Start()
     {
-        _bulletText.text = $"{_remainingBullets}/{_magazineMax}";
+        _maxBulletText.text = $"{_magazineMax}";
     }
     private void Update()
     {
         //一回目のR ゲームバーを起こす
-        if (Input.GetKeyDown(KeyCode.R) && _remainingBullets < _magazineMax && _reroading == false)
+        if (//Input.GetKeyDown(KeyCode.R) &&
+            _remainingBullets == 0 && _reroading == false)
         {
             Debug.Log("R1");
             _reroading = true;
@@ -38,9 +40,20 @@ public class Magazine : MonoBehaviour
             {
                 _remainingBullets = _magazineMax;
             }
-            _bulletText.text = $"{_remainingBullets}/{_magazineMax}";
+            _bulletText.text = $"{_remainingBullets}";
             _judgmentBar.gameObject.SetActive(false);
             _reroad.SetActive(false);
         }
+    }
+
+    public void Shot()
+    {
+        if(_bulletText == null || _maxBulletText == null)
+        {
+            return;
+        }
+
+        _remainingBullets--;
+        _bulletText.text = $"{_remainingBullets}";
     }
 }
