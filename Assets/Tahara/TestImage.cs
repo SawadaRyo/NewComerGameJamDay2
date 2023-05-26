@@ -44,6 +44,10 @@ public class TestImage : MonoBehaviour
             _timeUpEvent.Invoke();
         }
     }
+    public void TimePlus(float PlusNum)
+    {
+        _interval += PlusNum;
+    }
 
     public void ControlTime()
     {

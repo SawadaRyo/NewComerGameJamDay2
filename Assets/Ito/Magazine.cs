@@ -15,7 +15,7 @@ public class Magazine : MonoBehaviour
     [SerializeField] JudgmentBar _judgmentBar;
     [SerializeField] GameObject _reroad;
     bool _reroading = false;
-    public bool Strong { get;}
+    public bool Strong { get => _strong; set => _strong = value; }
     private bool _strong;
     private void Start()
     {

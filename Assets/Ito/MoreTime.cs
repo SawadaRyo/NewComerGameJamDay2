@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class MoreTime : FallObject, IFallObject
+public class MoreTime : FallObject
 {
     [SerializeField] TestImage _timeImage;
     [SerializeField] float _time = 3;
