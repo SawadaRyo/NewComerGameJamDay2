@@ -12,14 +12,14 @@ public class Fruit : FallObject
 
     public override void Erase()
     {
-        _gamejamScore.Addscore(_scoreValue);
+        _gamejamScore?.Addscore(_scoreValue);
         base.Erase();
     }
     public override void HitResult()
     {
         if (_hitCount == _countChange)
         {
-            _gamejamScore.Addscore(_scoreValue);
+            _gamejamScore?.Addscore(_scoreValue);
             Erase();
         }
         else if (_hitCount < _countChange)

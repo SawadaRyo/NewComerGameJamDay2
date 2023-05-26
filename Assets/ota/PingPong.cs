@@ -15,10 +15,11 @@ public class PingPong : MonoBehaviour
         _x = gameObject.transform.position.x;
     }
 
-
+    float n = 0;
     void Update()
     {
-        transform.position = new Vector2(_x + Mathf.Cos(Time.time * _speedX) * _amplitudeX, 
-                                            gameObject.transform.position.y + Mathf.Sin(Time.time * _speedY) * _amplitudeY);
+        n += Time.deltaTime;
+        transform.position = new Vector2(_x + Mathf.Cos(n * _speedX) * _amplitudeX, 
+                                            gameObject.transform.position.y + Mathf.Sin(n * _speedY) * _amplitudeY);
     }
 }

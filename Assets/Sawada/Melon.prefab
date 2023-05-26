@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 7081492336875458181}
   - component: {fileID: 7081492336875458180}
   - component: {fileID: 7081492336875458183}
-  - component: {fileID: 6613026125624936821}
+  - component: {fileID: 4934889472455368610}
   - component: {fileID: 7081492336875458182}
   - component: {fileID: 2100651572}
-  - component: {fileID: 1639290051}
   m_Layer: 0
-  m_Name: Circle 3
+  m_Name: Melon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6ea5ee8c688e7e74985f1a7c9d35fc77, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -110,7 +109,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6613026125624936821
+--- !u!114 &4934889472455368610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +118,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7081492336875458201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fff4e81e90f5504a955693002b71cb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5637e1159b2472a4887cd56ac86bdfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: -0.5
+  _speed: -1
+  _rotate: 2
 --- !u!114 &7081492336875458182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _countChange: 1
   _probability: 70
-  _remainTime: 3
+  _remainTime: 10
   _collider: {fileID: 2100651572}
   _renderer: {fileID: 7081492336875458180}
   _rb: {fileID: 7081492336875458183}
@@ -158,20 +158,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1639290051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7081492336875458201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 521ea2093962fe847acf0dc3efd07430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speedX: 2
-  _speedY: 0
-  _amplitudeX: 2
-  _amplitudeY: 0
-  _x: 0
